@@ -1,7 +1,7 @@
 title: Encore Nanny Collective
 tagline: An exceptional standard of family care.
 description: Personalized childcare, family meal preparation and attentive household support throughout Calgary.
-url: ""
+url: "https://encorenannycollective.com"
 baseurl: "" # For a project site, change to "/YOUR-REPOSITORY-NAME" (see README).
 permalink: pretty
 markdown: kramdown
@@ -40,8 +40,8 @@ concierge_email: "concierge@encorenannycollective.com"
 ga4_measurement_id: "G-8P4G87C6C2"
 analytics_enabled: true
 
-# Fictional, time-derived cumulative counter. This value continues across all deploys
-# without a database because every browser computes it from the same UTC reference.
+# Time-derived homepage counter. The displayed value persists across deployments
+# without server-side state because browsers use the same UTC reference.
 diaper_counter_base: 128640
 diaper_counter_reference_utc: "2026-10-23T00:00:00Z"
 diaper_counter_interval_seconds: 240  # 1 count every 4 minutes (~360/day)

@@ -24,7 +24,7 @@
     items.forEach(item=>observer.observe(item));
   }else{items.forEach(item=>item.classList.add('visible'))}
   // Shared deterministic tally: continues across page loads and GitHub Pages builds.
-  // It is a fictional, date-based estimate; it is not a database-backed real tally.
+  // Time-based display counter; no server-side storage required.
   const diaper=document.querySelector('[data-diaper-counter]');
   if(diaper){
     const base=Number(diaper.dataset.base)||128640;
