@@ -1,0 +1,53 @@
+---
+layout: default
+title: Our People
+slug: people
+description: Meet Encore's family care and household specialists, and learn about their approach to supporting Calgary families.
+---
+<section class="page-hero page-hero-dark">
+  <div class="container page-head reveal">
+    <p class="eyebrow eyebrow-light">THE ENCORE COLLECTIVE</p>
+    <h1>Good care begins<br><em>with the right person.</em></h1>
+    <p>Every family has its own routines, priorities and way of doing things. Our specialists bring thoughtful care, practical experience and individual strengths to the homes they support.</p>
+  </div>
+</section>
+<section class="section">
+  <div class="container">
+    <div class="intro-band reveal">
+      <strong>Selected for the way they work, not simply where they've worked.</strong>
+      <p>We value sound judgment, warmth, clear communication and attention to detail. Our collective draws from a broad range of professional experience, including family support, movement coaching, private hospitality, culinary preparation and household operations. What matters is how those skills contribute to the needs of your home.</p>
+    </div>
+    <div class="people-grid">
+      {% for person in site.data.people %}
+      <article class="person-card reveal">
+        <div class="person-photo">
+          <img src="{{ '/assets/images/people/' | append: person.image | relative_url }}" alt="Portrait of {{ person.name }} in the Encore specialist collection" loading="lazy" width="700" height="870">
+          <span class="person-code">{{ person.code }}</span>
+        </div>
+        <div class="person-text">
+          <span class="kicker">{{ person.region }}</span>
+          <h2>{{ person.name }}</h2>
+          <div class="person-role">{{ person.role }}</div>
+          <p>{{ person.pitch }}</p>
+          <div class="tag-row">
+            {% for tag in person.tags %}<span>{{ tag }}</span>{% endfor %}
+          </div>
+          <details class="person-details" data-specialist="{{ person.name | split: ' ' | first | downcase | escape }}">
+            <summary>Experience &amp; approach <span aria-hidden="true">+</span></summary>
+            <div class="person-expand">
+              <strong>Areas of focus</strong><p>{{ person.training }}</p>
+              <strong>From a family engagement</strong><p>{{ person.signature }}</p>
+              <strong>Earlier professional experience</strong><p>{{ person.previous_role }}</p>
+              <strong>In her words</strong><p>“{{ person.approach }}”</p>
+            </div>
+          </details>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+    <div class="foot-banner">
+      <span>INDIVIDUAL STRENGTHS. A CONSISTENT STANDARD OF CARE.</span>
+      <a href="{{ '/enquire/' | relative_url }}">Enquire about a specialist ↗</a><a href="{{ '/selection-standards/' | relative_url }}">How specialists are considered ↗</a>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,117 @@
+---
+layout: default
+slug: home
+---
+<section class="hero hero-home">
+  <div class="container hero-layout">
+    <div class="hero-content reveal">
+      <div class="eyebrow eyebrow-light"><span class="eyebrow-line"></span> PRIVATE CHILDCARE & HOUSEHOLD SUPPORT · CALGARY</div>
+      <h1>Exceptional<br>childcare.<br><em>Considered</em><br>living.</h1>
+      <p>Personalized childcare, thoughtful meal preparation and attentive household support, carefully coordinated around the needs of your family.</p>
+      <div class="hero-actions">
+        <a class="button button-gold" href="{{ '/services/' | relative_url }}">Explore our services <span aria-hidden="true">↗</span></a>
+        <a class="text-link light-link" href="{{ '/our-people/' | relative_url }}">Meet our specialists <span aria-hidden="true">→</span></a>
+      </div>
+      <div class="hero-foot"><span>Serving families throughout Calgary.</span></div>
+    </div>
+    <div class="hero-visual reveal">
+      <img src="{{ '/assets/images/hero-lifestyle.webp' | relative_url }}" alt="Editorial scene of a childcare specialist preparing a colorful family meal in a bright Calgary-style home" width="1024" height="1536" fetchpriority="high">
+      <div class="floating-proof"><span class="proof-seal" aria-hidden="true">✧</span><div><small>OUR APPROACH</small><strong>Care for children.<br>Support for daily life.</strong></div></div>
+    </div>
+  </div>
+  <div class="hero-edge">CHILDCARE <span>✦</span> NUTRITION <span>✦</span> HOUSEHOLD CARE <span>✦</span> CALGARY-WIDE</div>
+</section>
+<section class="section section-ivory">
+  <div class="container">
+    <div class="section-heading centered reveal">
+      <p class="eyebrow">A MORE COMPLETE APPROACH TO CARE</p>
+      <h2>Care that supports<br><em>the whole household.</em></h2>
+      <p>We bring childcare, meal preparation and practical home assistance together in a service tailored to how your family lives.</p>
+    </div>
+    <div class="three-cols">
+      <a class="feature-card reveal" href="{{ '/the-standard/' | relative_url }}#childcare"><span class="feature-num">01 / CHILDCARE</span><div class="feature-icon">✧</div><h3>Childcare with intention.</h3><p>Age-appropriate activities, familiar routines, and attentive support for infants, preschoolers and school-aged children.</p><span class="feature-more">Explore our approach ↗</span></a>
+      <a class="feature-card reveal" href="{{ '/the-standard/' | relative_url }}#nutrition"><span class="feature-num">02 / NUTRITION</span><div class="feature-icon">◈</div><h3>Thoughtful meals, simply prepared.</h3><p>Family-friendly meals, balanced snacks and help with everyday food preparation, shaped around your household’s preferences.</p><span class="feature-more">Explore meal support ↗</span></a>
+      <a class="feature-card reveal" href="{{ '/the-standard/' | relative_url }}#housekeeping"><span class="feature-num">03 / HOUSEHOLD</span><div class="feature-icon">◇</div><h3>A home that runs smoothly.</h3><p>Help with kitchen tidying, laundry, playroom organization and the smaller tasks that make daily routines easier.</p><span class="feature-more">Explore household support ↗</span></a>
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="container">
+    <div class="split-feature">
+      <div class="editorial-art reveal"><img src="{{ '/assets/images/household-editorial.webp' | relative_url }}" alt="Editorial image of a refined family kitchen where meal preparation, children’s activities and household organization come together" loading="lazy" width="920" height="1024"><span class="image-credit">ENCORE / A MORE COMPLETE HOUSEHOLD EXPERIENCE</span></div>
+      <div class="copy-panel reveal">
+        <p class="eyebrow">THOUGHTFUL CARE, PRACTICAL SUPPORT</p>
+        <h2>The difference is<br>in the <em>everyday.</em></h2>
+        <p>The familiar bedtime routine. A prepared lunch. Time for reading, play and fresh air. A kitchen that's ready for the next morning.</p>
+        <p>Encore offers coordinated care that respects your family’s existing routines, with flexible arrangements, clear communication and practical support throughout the day.</p>
+        <blockquote>The best support is felt across the whole household.</blockquote>
+        <a class="button button-dark" href="{{ '/the-standard/' | relative_url }}">Learn about our approach ↗</a>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section section-rose">
+  <div class="container tension-grid">
+    <div class="reveal"><p class="eyebrow">OUR PEOPLE</p><h2>Carefully selected.<br><em>Individually matched.</em></h2></div>
+    <div class="tension-copy reveal">
+      <p>We believe excellent family support begins with the right person. We value sound judgment, consistency, discretion, practical ability and a natural understanding of service.</p>
+      <p>Our specialists bring a range of professional backgrounds, including private hospitality, event operations, movement instruction and family support. Each is matched according to the household’s priorities and routines.</p>
+      <a class="text-link" href="{{ '/our-people/' | relative_url }}">Get to know our team <span aria-hidden="true">↗</span></a>
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="container">
+    <div class="section-heading reveal"><p class="eyebrow">MEET OUR SPECIALISTS</p><h2>The right person<br><em>makes all the difference.</em></h2><p>Explore a selection of the people who support Encore families, each bringing a different combination of skills, temperament and experience.</p></div>
+    <div class="team-peek-grid">
+      {% for person in site.data.people limit:3 %}
+      <a href="{{ '/our-people/' | relative_url }}" class="team-peek-card reveal" aria-label="Explore the profile of {{ person.name }}">
+        <div class="team-peek-photo"><img src="{{ '/assets/images/people/' | append: person.image | relative_url }}" alt="Portrait of {{ person.name }}, an Encore specialist" width="700" height="870" loading="lazy"></div>
+        <div class="team-peek-copy"><span class="kicker">{{ person.region }}</span><h3>{{ person.name }}</h3><p>{{ person.role }}</p><span class="text-link">View the collective ↗</span></div>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+<section class="section numbers-section">
+  <div class="container">
+    <div class="numbers-intro reveal"><p class="eyebrow eyebrow-light">ATTENTION TO DETAIL</p><h2>A high standard,<br><em>in every detail.</em></h2><p>From consistent routines to the smallest household tasks, we pay attention to what makes daily care dependable.</p></div>
+    <div class="metric-main reveal"><div class="metric-label">DIAPERS CHANGED · SINCE 2021</div><div class="counter" data-diaper-counter data-base="{{ site.diaper_counter_base }}" data-reference="{{ site.diaper_counter_reference_utc }}" data-interval="{{ site.diaper_counter_interval_seconds }}" aria-label="Cumulative diapers changed since 2021" aria-live="off">{{ site.diaper_counter_base }}</div><div class="metric-sub">Across the collective, experience is measured one ordinary task at a time.</div></div>
+    <div class="metric-side"><div><strong>91.4%</strong><span>Vegetable acceptance</span></div><div><strong>12 min</strong><span>Typical playroom reset</span></div><div><strong>0</strong><span>Crumbs overlooked, target</span></div></div>
+  </div>
+</section>
+<section class="section section-ivory">
+  <div class="container split-mini">
+    <div class="reveal"><p class="eyebrow">CARE THAT FITS YOUR SCHEDULE</p><h2>Support around<br><em>your family’s schedule.</em></h2><p>Choose from flexible childcare arrangements, coordinated household support and extended coverage when your schedule requires more than a conventional shift.</p><p>Our team helps plan staffing, handovers, family routines and communications so the experience remains consistent from one visit to the next.</p><a class="button button-dark" href="{{ '/services/' | relative_url }}">Explore care arrangements ↗</a></div>
+    <div class="protocol-panel reveal"><div class="protocol-head"><span>ENCORE / HOUSEHOLD CONTINUITY</span><span>SERVICE MODEL</span></div><div class="protocol-row"><span>Care coordination</span><strong>Personalized</strong></div><div class="protocol-row"><span>Meal support</span><strong>Integrated</strong></div><div class="protocol-row"><span>Home restoration</span><strong>Available</strong></div><div class="protocol-row"><span>Parent reporting</span><strong>Clear and timely</strong></div><div class="protocol-status">CONSISTENT CARE, CONSIDERED IN ADVANCE <span aria-hidden="true">✧</span></div></div>
+  </div>
+</section>
+<section class="section">
+  <div class="container">
+    <div class="section-heading reveal"><p class="eyebrow">CLIENT EXPERIENCES</p><h2>The details our<br><em>clients remember.</em></h2></div>
+    <div class="testimonials-grid">
+      {% for review in site.data.reviews limit:3 %}
+      <article class="quote-card reveal">
+        <span class="five-stars" aria-label="{{ review.rating }} out of five stars">{{ review.stars }}</span>
+        <blockquote>“{{ review.excerpt }}”</blockquote>
+        <div class="quote-by"><strong>{{ review.name }}</strong><span>{{ review.place }} · Family client</span></div>
+      </article>
+      {% endfor %}
+    </div>
+    <div class="center-link"><a class="text-link" href="{{ '/client-stories/' | relative_url }}">Explore client experiences ↗</a></div>
+  </div>
+</section>
+<section class="section afterhours-home">
+  <div class="container split-mini">
+    <div class="reveal"><p class="eyebrow">PRIVATE OVERNIGHT CARE</p><h2>Overnight care,<br><em>thoughtfully arranged.</em></h2><p>For families with travel commitments, unusual schedules or more complex overnight needs, Encore offers dedicated specialist coverage and carefully planned morning handovers.</p><a class="button button-dark" href="{{ '/after-midnight/' | relative_url }}">Explore overnight care ↗</a></div>
+    <div class="night-panel reveal"><span class="eyebrow eyebrow-light">AFTER MIDNIGHT ENGAGEMENTS</span><p class="night-hours">22:00 <span>—</span> 06:00</p><p>Two dedicated care specialists, with additional private-residence services available by arrangement.</p><div class="night-price">From <strong>$1,795</strong> <span>per overnight engagement</span></div><span class="night-tag">PRIVATE RESIDENCE FROM $3,950 · LIMITED AVAILABILITY</span></div>
+  </div>
+</section>
+<section class="section section-rose">
+  <div class="container split-mini">
+    <div class="reveal"><p class="eyebrow">EXTENDED FAMILY COVERAGE</p><h2>When plans change,<br><em>care continues.</em></h2><p>When one parent is travelling, extended childcare arrangements can provide continuity for meals, activities, evening routines and the household as a whole.</p><a class="button button-dark" href="{{ '/wife-away-protocol/' | relative_url }}">Explore extended coverage ↗</a></div>
+    <div class="protocol-panel reveal"><div class="protocol-head"><span>WEEKEND COVERAGE PLAN</span><span>FAMILY CONTINUITY</span></div><div class="protocol-row"><span>Care arrangement</span><strong>Multi-child</strong></div><div class="protocol-row"><span>Coverage period</span><strong>Weekend</strong></div><div class="protocol-row"><span>Bedtime routines</span><strong>Coordinated</strong></div><div class="protocol-row"><span>Care plan</span><strong>Tailored support</strong></div><div class="protocol-status">CONTINUITY PLANNED IN ADVANCE <span aria-hidden="true">↗</span></div></div>
+  </div>
+</section>
+<section class="section"><div class="container tension-grid"><div class="reveal"><p class="eyebrow">SERVING GREATER CALGARY</p><h2>Throughout Calgary.<br><em>Close to home.</em></h2></div><div class="tension-copy reveal"><p>Encore’s service area spans Calgary’s inner city and all four quadrants, from Mount Royal and Britannia to Mahogany, Tuscany, Evanston and Cornerstone.</p><p>Selected communities beyond city limits are considered by arrangement.</p><a class="text-link" href="{{ '/service-areas/' | relative_url }}">Explore Calgary service areas ↗</a></div></div></section>
+<section class="bottom-cta"><div class="container reveal"><p class="eyebrow eyebrow-light">CARE PLANNED AROUND YOUR FAMILY</p><h2>Find the right<br><em>level of support.</em></h2><p>Review the types of care and household support that may suit your family’s needs.</p><a class="button button-gold" href="{{ '/enquire/' | relative_url }}">Begin a private enquiry ↗</a></div></section>

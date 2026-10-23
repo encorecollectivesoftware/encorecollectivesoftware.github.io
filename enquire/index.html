@@ -1,0 +1,93 @@
+---
+layout: default
+title: Private Enquiries
+slug: enquire
+---
+<section class="page-hero page-hero-dark concierge-hero">
+  <div class="container page-head reveal">
+    <p class="eyebrow eyebrow-light">ENCORE · PRIVATE CLIENT OFFICE</p>
+    <h1>Every arrangement begins<br><em>with understanding.</em></h1>
+    <p>Tell us what your household requires. Whether you are considering occasional care, a recurring specialist or an extended private-residence arrangement, our approach begins with a carefully considered family brief.</p>
+  </div>
+</section>
+<section class="section concierge-main">
+  <div class="container concierge-layout">
+    <div class="concierge-content reveal">
+      <p class="eyebrow">PRIVATE ENQUIRY</p>
+      <h2>Care begins<br><em>with the details.</em></h2>
+      <p>Every family has its own rhythms, expectations and priorities. Use the short enquiry below to outline an initial service preference and prepare a brief for discussion.</p>
+      <div class="concierge-steps">
+        <div><span>01</span><div><h3>Household introduction</h3><p>Identify the type of support and scheduling requirements.</p></div></div>
+        <div><span>02</span><div><h3>Specialist consideration</h3><p>Review the experience, working style and availability relevant to the household.</p></div></div>
+        <div><span>03</span><div><h3>Individual arrangement</h3><p>Define coverage, responsibilities and handover expectations before confirming any engagement.</p></div></div>
+      </div>
+      <aside class="concierge-office">
+        <p class="eyebrow eyebrow-light">PRIVATE CLIENT OFFICE</p>
+        <p class="concierge-email"><a href="mailto:{{ site.concierge_email | escape }}">{{ site.concierge_email | escape }}</a></p>
+        <p>Calgary, Alberta · Services throughout the city and select surrounding communities.</p>
+        <p class="concierge-office-hours">Consultations and arrangements are considered individually.</p>
+      </aside>
+    </div>
+    <div class="concierge-form-panel reveal">
+      <div class="concierge-form-heading"><span>ENCORE / INITIAL CONSULTATION</span><span>01—06</span></div>
+      <h2>Private enquiry</h2>
+      <p class="concierge-form-intro">A preliminary view of your household's preferred care arrangement.</p>
+      {% assign formspree_active = false %}{% if site.formspree_form_id != nil and site.formspree_form_id != '' %}{% assign formspree_active = true %}{% endif %}
+      <form id="enquiry-form" method="POST" action="{% if formspree_active %}https://formspree.io/f/{{ site.formspree_form_id | escape }}{% else %}#{% endif %}" data-formspree-enabled="{{ formspree_active }}" novalidate>
+        {% if formspree_active %}
+        <div class="enquiry-fields-two">
+          <div class="enquiry-field"><label for="enquiry-name">Your name</label><input id="enquiry-name" name="name" autocomplete="name" required maxlength="100" placeholder="Your name"></div>
+          <div class="enquiry-field"><label for="enquiry-email">Email for correspondence</label><input id="enquiry-email" name="email" type="email" autocomplete="email" required maxlength="180" placeholder="you@example.com"></div>
+        </div>
+        <input type="hidden" name="_subject" value="Encore | Private Client Enquiry">
+        <div class="enquiry-honeypot" aria-hidden="true"><label for="enquiry-gotcha">Leave this field blank</label><input type="text" id="enquiry-gotcha" name="_gotcha" tabindex="-1" autocomplete="off"></div>
+        {% endif %}
+        <div class="enquiry-field">
+          <label for="enquiry-service">Service of interest</label>
+          <select id="enquiry-service" name="service" required>
+            <option value="">Select a service</option>
+            <option>Encore Flex — occasional care</option>
+            <option>Encore Duo — coordinated specialists</option>
+            <option>Family Continuity — weekend support</option>
+            <option>Encore Reserve — recurring arrangements</option>
+            <option>After Midnight Engagements — overnight care</option>
+            <option>Private Residence — bespoke overnight support</option>
+            <option>Not yet decided</option>
+          </select>
+        </div>
+        <div class="enquiry-fields-two">
+          <div class="enquiry-field"><label for="enquiry-children">Children in household</label><select id="enquiry-children" name="children" required><option value="">Select</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5 or more</option></select></div>
+          <div class="enquiry-field"><label for="enquiry-area">Calgary area</label><select id="enquiry-area" name="area" required><option value="">Select</option><option>Southwest</option><option>Southeast</option><option>Northwest</option><option>Northeast</option><option>Inner city</option><option>Surrounding communities</option></select></div>
+        </div>
+        <div class="enquiry-fields-two">
+          <div class="enquiry-field"><label for="enquiry-when">Preferred timing</label><select id="enquiry-when" name="when"><option>Exploring options</option><option>Within two weeks</option><option>Within one month</option><option>Future recurring support</option></select></div>
+          <div class="enquiry-field"><label for="enquiry-coverage">Expected coverage</label><select id="enquiry-coverage" name="coverage"><option>Occasional daytime / evening</option><option>Regular weekly</option><option>Weekend</option><option>Overnight</option><option>Extended multi-day</option></select></div>
+        </div>
+        <fieldset class="enquiry-priorities"><legend>Household priorities</legend>
+          <label><input type="checkbox" name="priorities" value="Childcare and routines"> Childcare &amp; routines</label>
+          <label><input type="checkbox" name="priorities" value="Nutritious meal preparation"> Nutritious meal preparation</label>
+          <label><input type="checkbox" name="priorities" value="Household organization"> Household organization</label>
+          <label><input type="checkbox" name="priorities" value="Overnight continuity"> Overnight continuity</label>
+        </fieldset>
+        {% if formspree_active %}
+        <div class="enquiry-consent"><label><input type="checkbox" name="consent" value="yes" required> I agree to send these general preferences and my contact information to the private client office for a response.</label></div>
+        {% endif %}
+        <button class="button button-dark enquiry-submit" type="submit">{% if formspree_active %}Send private enquiry{% else %}Prepare consultation brief{% endif %} <span aria-hidden="true">↗</span></button>
+        <p class="enquiry-privacy">{% if formspree_active %}Your enquiry is sent using Formspree. Please do not include children's names, birth dates, medical details or home addresses. Submitting this form does not reserve or confirm care.{% else %}This prepares a brief on your device. No information is transmitted or stored, and no reservation is created.{% endif %}</p>
+      </form>
+      <div id="enquiry-result" class="enquiry-result" hidden aria-live="polite">
+        <span class="eyebrow">YOUR PRELIMINARY BRIEF</span>
+        <h3>Considered care, clearly defined.</h3>
+        <p id="enquiry-summary"></p>
+        <button id="enquiry-copy" class="button button-outline" type="button">Copy consultation brief ↗</button>
+        <p class="enquiry-privacy" id="enquiry-feedback" role="status">{% if formspree_active %}Enquiry status will appear here.{% else %}Prepared for your review. This is not a reservation or transmitted enquiry.{% endif %}</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section section-ivory">
+  <div class="container split-mini">
+    <div class="reveal"><p class="eyebrow">BEFORE AN ENGAGEMENT</p><h2>A clear understanding.<br><em>A considered plan.</em></h2></div>
+    <div class="reveal"><p>A care brief should identify the agreed schedule, number of specialists, relevant routines, responsibilities and communication preferences. For extended arrangements, a separate handover plan may be appropriate.</p><p>Explore our service structure or prepare a preliminary household assessment before reviewing the next steps.</p><a class="text-link" href="{{ '/get-matched/' | relative_url }}">Explore household planning ↗</a><p class="enquiry-terms-link">Before arranging care, review <a href="{{ '/selection-standards/' | relative_url }}">specialist selection</a> and <a href="{{ '/service-terms/' | relative_url }}">service terms</a>.</p></div>
+  </div>
+</section>

@@ -1,0 +1,47 @@
+---
+layout: default
+title: Household Assessment
+slug: match
+---
+<section class="page-hero page-hero-dark">
+  <div class="container page-head reveal">
+    <p class="eyebrow eyebrow-light">ENCORE HOUSEHOLD PLANNING</p>
+    <h1>Care shaped around<br><em>your household.</em></h1>
+    <p>Explore how the number and ages of your children, your schedule and your preferred level of support can inform a coordinated care arrangement.</p>
+  </div>
+</section>
+<section class="section">
+  <div class="container assessment-layout">
+    <div class="assessment-card reveal">
+      <div class="assessment-top"><span>FAMILY REQUIREMENTS</span><span>CARE PLANNING OVERVIEW</span></div>
+      <form id="match-form" novalidate>
+        <label for="children-input">Number of children in the household</label>
+        <div class="stepper"><button type="button" id="children-minus" aria-label="Remove one child">−</button><output id="children-value" aria-live="polite">4</output><button type="button" id="children-plus" aria-label="Add one child">+</button></div>
+        <input type="hidden" name="children" id="children-input" value="4">
+        <label for="youngest">Age of youngest child</label>
+        <select id="youngest" name="youngest"><option value="baby">Under 12 months</option><option value="toddler" selected>1–3 years</option><option value="preschool">4–5 years</option><option value="school">6+ years</option></select>
+        <label for="overnight">Is overnight coverage required?</label>
+        <select id="overnight" name="overnight"><option value="no" selected>No, daytime or evening only</option><option value="yes">Yes, overnight coverage</option></select>
+        <label for="duration">Expected duration of support</label>
+        <select id="duration" name="duration"><option value="evening">One evening</option><option value="weekend" selected>Weekend coverage</option><option value="extended">Several days</option></select>
+        <fieldset><legend>Preferred level of assistance</legend>
+          <label class="radio-line"><input type="radio" name="confidence" value="fine"><span>Primarily childcare</span></label>
+          <label class="radio-line"><input type="radio" name="confidence" value="concerned" checked><span>Childcare with household support</span></label>
+          <label class="radio-line"><input type="radio" name="confidence" value="urgent"><span>Comprehensive, coordinated support</span></label>
+        </fieldset>
+        <button class="button button-dark form-submit" type="submit">View a care recommendation ↗</button>
+        <p class="form-note">Your answers stay in this browser. No contact information is requested, and no reservation is created.</p>
+      </form>
+    </div>
+    <div class="assessment-result reveal" id="assessment-result" aria-live="polite">
+      <span class="result-kicker">ENCORE / CARE PLANNING SUMMARY</span>
+      <div class="result-status">READY FOR REVIEW</div>
+      <h2 id="result-title">Your household.<br><em>A coordinated plan.</em></h2>
+      <p id="result-description">Complete the questionnaire to review an arrangement suited to your household's routines and schedule.</p>
+      <div class="result-rows" id="result-rows"><div><span>Children</span><strong>—</strong></div><div><span>Suggested coverage</span><strong>—</strong></div><div><span>Recommended service</span><strong>—</strong></div></div>
+      <p class="result-fine">This planning overview is not a confirmed reservation or service agreement.</p>
+      <button class="result-copy" type="button" id="copy-assessment" disabled>Copy care summary <span aria-hidden="true">↗</span></button>
+      <div class="result-feedback" id="copy-feedback" role="status"></div>
+    </div>
+  </div>
+</section>

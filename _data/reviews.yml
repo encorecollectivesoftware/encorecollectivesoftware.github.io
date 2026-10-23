@@ -1,0 +1,135 @@
+- name: Jennifer R.
+  type: wives
+  place: Heritage Pointe
+  stars: ★★★★★
+  service: Family Continuity
+  label: Evening routines · Four children
+  featured: true
+  quote: When I was away for a three-day work conference, Kateryna took over the early-evening routine.
+    She remembered which child needed the hallway light left on, prepared lunches for the following day
+    and kept to our usual schedule. The house was calm when I returned. My husband had already asked for
+    her next available dates.
+  excerpt: Kateryna kept the children’s routines familiar, made the next day’s lunches and left the house
+    in excellent shape. My husband had already asked when she could come back.
+  rating: 5
+- name: Michael T.
+  type: husbands
+  place: Legacy
+  stars: ★★★★★
+  service: Encore Flex
+  label: Returning family · Evening care
+  quote: The first Thursday was a straightforward childcare booking while my wife attended a conference.
+    Mila made supper, supervised homework and had both boys in bed by eight. I was impressed enough to
+    ask about weekly availability. My wife has since pointed out that Thursdays were never previously
+    a problem.
+  excerpt: Mila made supper, supervised homework and had both boys in bed by eight. I asked about weekly
+    availability. My wife says Thursdays were never previously a problem.
+  rating: 5
+- name: Sarah M.
+  type: wives
+  place: Britannia
+  stars: ★★★★☆
+  service: Encore Reserve
+  label: Recurring household · Two children
+  quote: The photographs made me ask more questions than I normally would of a childcare agency. Elena
+    answered each of them thoughtfully and followed up with a clear plan for allergies, pickups and emergency
+    contacts. The children are happy and the communication is excellent. I still think my husband looked
+    a little too pleased when he introduced me to the website.
+  excerpt: Elena answered every question I had and prepared a thorough plan for allergies, pickups and
+    routines. The service has been excellent. My husband was particularly eager for me to see the website.
+  rating: 4
+- name: Priya N.
+  type: wives
+  place: Auburn Bay
+  stars: ★★★★★
+  service: Encore Flex
+  label: Household support · School-age children
+  quote: Sofia arrived with a simple checklist and asked where we kept the extra linens. On her second
+    visit she quietly resolved a linen-closet system our family had argued about for years. Our youngest
+    now knows where the towels belong. My husband says he misses the old system, which apparently involved
+    leaving them on the floor.
+  rating: 5
+- name: David L.
+  type: husbands
+  place: Mahogany
+  stars: ★★★★★
+  service: Encore Duo
+  label: Coordinated care · Four children
+  quote: We wanted extra help with dinner and bedtime for four children. Encore suggested two specialists
+    and sent a schedule that assigned every task to a fifteen-minute window. It seemed excessive until
+    the evening finished on time. My wife asked who had made the chart. I told her I couldn’t take credit
+    for any of it.
+  rating: 5
+- name: Oliver, age 4
+  type: children
+  place: Cranston
+  stars: ''
+  service: Movement & play
+  label: A younger client’s perspective
+  quote: Mila makes an obstacle course with cushions and chairs. She says the dining table isn’t for jumping,
+    even if I promise to be careful. Dad makes obstacle courses too, but hers have better tunnels.
+  rating: null
+- name: Claire B.
+  type: wives
+  place: West Springs
+  stars: ★★★★★
+  service: Family Continuity
+  label: Weekend care · Three children
+  quote: Our specialist arrived early enough to walk through the morning routine before I left. When I
+    came back, the children’s clothes were put away, supper had been made, and the entryway was clear
+    of winter gear. I was delighted. My husband described the booking as an investment in household stability,
+    which is not how he usually talks about childcare.
+  rating: 5
+- name: Marc B.
+  type: husbands
+  place: Lake Bonavista
+  stars: ★★★★★
+  service: Encore Reserve
+  label: Recurring family · Logistics
+  quote: Elena reorganized our weekly calendar so swimming, music lessons and school pickups stopped colliding.
+    The resulting plan was clear enough that even I could follow it. My wife was pleased. I was particularly
+    pleased to learn that the agency could retain our preferences for future bookings.
+  rating: 5
+- name: Thomas W.
+  type: husbands
+  place: Mount Royal
+  stars: ★★★★☆
+  service: After Midnight Engagements
+  label: Overnight care · Two children
+  quote: I was skeptical about the overnight rate. The arrangement included two specialists, a documented
+    night schedule and breakfast preparation. By morning, everything the children needed was ready and
+    I had actually slept. It is expensive; I won’t pretend otherwise. I have, however, kept the coordinator’s
+    number.
+  rating: 4
+- name: Emily, age 7
+  type: children
+  place: Walden
+  stars: ''
+  service: Family meals
+  label: A younger client’s perspective
+  quote: Anastasia made flowers out of cucumbers and put them beside our sandwiches. I ate mine and told
+    my brother it was restaurant food. He ate his too. We asked if she could come back and make the carrots
+    into something.
+  rating: null
+- name: Caroline H.
+  type: wives
+  place: Aspen Woods
+  stars: ★★★★☆
+  service: After Midnight · Private Residence
+  label: Private residence arrangement
+  quote: I requested a line-by-line explanation of the $3,950 Private Residence arrangement before agreeing
+    to it. The plan was meticulous, the overnight care followed our instructions and the next morning
+    the kitchen had been restored. I still think the name After Midnight Engagements invites unnecessary
+    questions. My husband thinks it sounds elegant. We disagree.
+  rating: 4
+- name: Greg P.
+  type: husbands
+  place: McKenzie Lake
+  stars: ★★★★★
+  service: Family Continuity
+  label: Weekend support · Four children
+  quote: During my wife’s trip I had four children, a school project and an unexplained quantity of hockey
+    equipment. Viktoria coordinated dinner and bedtime while Sofia brought the house back into order.
+    My wife returned to four fed children and clear countertops. She later asked whether I would have
+    survived without help. I think we can agree that is not really the point.
+  rating: 5

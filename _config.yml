@@ -1,0 +1,47 @@
+title: Encore Nanny Collective
+tagline: An exceptional standard of family care.
+description: Personalized childcare, family meal preparation and attentive household support throughout Calgary.
+url: ""
+baseurl: "" # For a project site, change to "/YOUR-REPOSITORY-NAME" (see README).
+permalink: pretty
+markdown: kramdown
+exclude:
+  - README.md
+  - FORM_HANDLING_OPTIONS.md
+  - GA4_SETUP_V14.md
+  - SELECTION_TERMS_V12_NOTES.md
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE
+  - scripts
+  - preview
+  - vendor
+  - node_modules
+  - .github
+  - "*_CHANGELOG.md"
+  - "*_NOTES.md"
+  - "*_AUDIT*.md"
+  - "FULL_SITE_AUDIT_V10.md"
+  - "PRIVATE_REVEAL_NOTES.md"
+  - "SITE_COMPLETENESS_AUDIT_V11.md"
+  - "PHOTOGRAPHY_INTEGRATION.md"
+  - "PORTRAIT_ART_DIRECTION.md"
+  - "EDITORIAL_V9_CONSISTENCY.md"
+  - "FORM_AND_COUNTER_V13_CHANGELOG.md"
+  - "EDITORIAL_CHANGELOG.md"
+
+# Private enquiry. Create a Formspree form with a verified recipient in your own account.
+# Paste ONLY the short form ID, not the full https://formspree.io/f/... URL.
+# Blank => local-only care brief; nonblank => real Formspree submission.
+formspree_form_id: ""
+concierge_email: "concierge@encorenannycollective.com"
+
+# Google Analytics 4 — optional analytics, opt-in only, production builds only.
+ga4_measurement_id: "G-8P4G87C6C2"
+analytics_enabled: true
+
+# Fictional, time-derived cumulative counter. This value continues across all deploys
+# without a database because every browser computes it from the same UTC reference.
+diaper_counter_base: 128640
+diaper_counter_reference_utc: "2026-10-23T00:00:00Z"
+diaper_counter_interval_seconds: 240  # 1 count every 4 minutes (~360/day)

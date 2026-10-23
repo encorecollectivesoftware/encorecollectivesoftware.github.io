@@ -1,0 +1,26 @@
+---
+layout: default
+title: Questions & Answers
+slug: questions
+---
+<section class="page-hero page-hero-dark">
+  <div class="container page-head reveal">
+    <p class="eyebrow eyebrow-light">QUESTIONS &amp; ANSWERS</p>
+    <h1>Every detail<br><em>deserves an answer.</em></h1>
+    <p>Practical information about specialist selection, family routines, household support and the scope of our care arrangements.</p>
+  </div>
+</section>
+<section class="section">
+  <div class="container faq-layout">
+    <div class="faq-intro reveal">
+      <p class="eyebrow">CLEAR EXPECTATIONS</p>
+      <h2>Informed families.<br><em>Considered care.</em></h2>
+      <p>We believe families should understand the experience, availability and responsibilities associated with any care arrangement. Questions are welcome at every stage of planning.</p>
+    </div>
+    <div class="faq-list reveal">
+      {% for faq in site.data.faqs %}
+      <details class="faq-item"><summary>{{ faq.q }}<span aria-hidden="true">+</span></summary><p>{{ faq.a }}</p></details>
+      {% endfor %}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en-CA">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#172c29">
+  <meta name="description" content="{{ page.description | default: site.description | escape }}">
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+  <title>{% if page.title %}{{ page.title | escape }} | {% endif %}{{ site.title | escape }}</title>
+  <link rel="icon" type="image/svg+xml" href="{{ '/assets/images/favicon.svg' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+  {% if jekyll.environment == 'production' and site.analytics_enabled and site.ga4_measurement_id %}
+  <!-- The Google tag is requested only AFTER visitor consent. -->
+  <script defer src="{{ '/assets/js/analytics.js' | relative_url }}" data-ga4-id="{{ site.ga4_measurement_id | escape }}"></script>
+  {% endif %}
+  <script defer src="{{ '/assets/js/site.js' | relative_url }}"></script>
+</head>
+<body data-page="{{ page.slug | default: 'home' }}">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="announcement"><span class="announcement-dot"></span> Across Calgary · Private family support · An exceptional standard of care <a href="{{ '/the-standard/' | relative_url }}">Explore the standard <span aria-hidden="true">↗</span></a></div>
+  <header class="site-header" id="top">
+    <div class="container nav-row">
+      <a class="brand" href="{{ '/' | relative_url }}" aria-label="Encore Nanny Collective home"><span class="brand-mark" aria-hidden="true">✧</span><span class="brand-copy"><strong>ENCORE</strong><small>NANNY COLLECTIVE</small></span></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+      <nav class="primary-nav" id="primary-nav" aria-label="Main navigation">
+        <a href="{{ '/our-people/' | relative_url }}">Our people</a>
+        <a href="{{ '/the-standard/' | relative_url }}">The standard</a>
+        <a href="{{ '/services/' | relative_url }}">Services</a>
+        <a href="{{ '/client-stories/' | relative_url }}">Client stories</a>
+        <a href="{{ '/our-story/' | relative_url }}">Our story</a>
+        <a class="nav-cta" href="{{ '/enquire/' | relative_url }}">Private enquiry <span aria-hidden="true">↗</span></a>
+      </nav>
+    </div>
+  </header>
+  <main id="main">{{ content }}</main>
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand-column">
+        <a class="brand brand-footer" href="{{ '/' | relative_url }}" aria-label="Encore Nanny Collective home"><span class="brand-mark" aria-hidden="true">✧</span><span class="brand-copy"><strong>ENCORE</strong><small>NANNY COLLECTIVE</small></span></a>
+        <p>Personalized childcare, family meal preparation and attentive household support, thoughtfully arranged around the life of the home.</p>
+        <p class="footer-contact-label">PRIVATE CLIENT OFFICE</p>
+        <p class="footer-contact-address"><a href="mailto:{{ site.concierge_email | escape }}">{{ site.concierge_email | escape }}</a></p>
+        <div class="footer-motto">Excellence lives in the details.</div>
+      </div>
+      <div>
+        <h3>Discover Encore</h3>
+        <a href="{{ '/our-people/' | relative_url }}">Our specialists</a>
+        <a href="{{ '/the-standard/' | relative_url }}">Our standard</a>
+        <a href="{{ '/selection-standards/' | relative_url }}">Specialist selection</a>
+        <a href="{{ '/our-story/' | relative_url }}">Our approach</a>
+        <a href="{{ '/client-stories/' | relative_url }}">Client experiences</a>
+      </div>
+      <div>
+        <h3>Care arrangements</h3>
+        <a href="{{ '/services/' | relative_url }}">Services &amp; pricing</a>
+        <a href="{{ '/service-terms/' | relative_url }}">Service terms</a>
+        <a href="{{ '/wife-away-protocol/' | relative_url }}">Family Continuity</a>
+        <a href="{{ '/after-midnight/' | relative_url }}">After Midnight Engagements</a>
+        <a href="{{ '/get-matched/' | relative_url }}">Household assessment</a>
+        <a href="{{ '/enquire/' | relative_url }}">Private enquiries</a>
+      </div>
+      <div>
+        <h3>Calgary coverage</h3>
+        <p>Across established inner-city neighbourhoods and communities in all four Calgary quadrants.</p>
+        <a href="{{ '/service-areas/' | relative_url }}">View service areas ↗</a>
+        <a href="{{ '/questions/' | relative_url }}">Frequently asked questions</a>
+        <a href="{{ '/privacy/' | relative_url }}">Privacy &amp; website analytics</a>
+      </div>
+    </div>
+    <div class="container footnote footer-legal">
+      <div class="footer-identity"><span>© 2026 Encore Nanny Collective</span><span>Calgary, Alberta</span></div>
+      <p class="footer-service-note">Explore <a href="{{ '/selection-standards/' | relative_url }}">specialist selection</a> and <a href="{{ '/service-terms/' | relative_url }}">service terms</a>. Care arrangements are discussed individually. An initial enquiry is not a reservation or confirmation of availability.</p>
+    </div>
+    {% if jekyll.environment == 'production' and site.analytics_enabled and site.ga4_measurement_id %}
+    <div class="container analytics-footer-row">
+      <button class="analytics-manage" type="button" data-analytics-manage>Analytics preferences</button>
+    </div>
+    {% endif %}
+  </footer>
+  {% if jekyll.environment == 'production' and site.analytics_enabled and site.ga4_measurement_id %}
+  <aside class="analytics-choice" id="analytics-choice" role="region" aria-label="Website analytics preferences" hidden>
+    <div class="analytics-choice-content">
+      <div><strong>Website analytics</strong><p>We use optional Google Analytics to understand which pages and services interest visitors. Your enquiry details are not sent to Analytics. <a href="{{ '/privacy/' | relative_url }}">Privacy information</a></p></div>
+      <div class="analytics-choice-actions">
+        <button type="button" data-analytics-reject>Decline</button>
+        <button type="button" class="analytics-allow" data-analytics-accept>Allow analytics</button>
+      </div>
+    </div>
+  </aside>
+  {% endif %}
+</body>
+</html>

@@ -1,0 +1,50 @@
+---
+layout: default
+title: Client Stories
+slug: stories
+description: Experiences from families using Encore's childcare, overnight and household support services across Calgary.
+---
+<section class="page-hero page-hero-light">
+  <div class="container page-head reveal">
+    <p class="eyebrow">CLIENT EXPERIENCES</p>
+    <h1>Good care is felt<br><em>in the details.</em></h1>
+    <p>Bedtimes that run to plan. Children who look forward to a familiar face. A kitchen ready for the next morning. Families share the details that made a difference at home.</p>
+  </div>
+</section>
+<section class="section testimonials-page-section">
+  <div class="container">
+    <div class="reviews-intro reveal">
+      <div>
+        <p class="eyebrow">WHAT FAMILIES SAY</p>
+        <h2>Considered care.<br><em>Remembered at home.</em></h2>
+      </div>
+      <p>Every household has its own habits and priorities. These accounts reflect the different ways families have used Encore for care, coordination and the work that happens between the two.</p>
+    </div>
+    <div class="filter-bar" role="group" aria-label="Filter client experiences">
+      <button type="button" class="filter-btn active" data-review-filter="all" aria-pressed="true">All experiences</button>
+      <button type="button" class="filter-btn" data-review-filter="wives" aria-pressed="false">Mothers</button>
+      <button type="button" class="filter-btn" data-review-filter="husbands" aria-pressed="false">Fathers</button>
+      <button type="button" class="filter-btn" data-review-filter="children" aria-pressed="false">Children</button>
+    </div>
+    <div class="reviews-grid">
+      {% for review in site.data.reviews %}
+      <article class="review-card reveal{% if review.featured %} review-card-featured{% endif %}" data-review-type="{{ review.type }}">
+        <div class="review-card-header">
+          <span class="review-service">{{ review.service }}</span>
+          {% if review.type == 'children' %}<span class="review-young">A CHILD'S PERSPECTIVE</span>{% else %}<span class="stars" aria-label="{{ review.rating }} out of five stars">{{ review.stars }}</span>{% endif %}
+        </div>
+        <blockquote>“{{ review.quote }}”</blockquote>
+        <div class="review-author"><strong>{{ review.name }}</strong><span>{{ review.place }} · {{ review.label }}</span></div>
+      </article>
+      {% endfor %}
+    </div>
+    <div class="reviews-closing reveal">
+      <div>
+        <p class="eyebrow">THE ENCORE STANDARD</p>
+        <h3>Thoughtful service is personal.</h3>
+        <p>Care plans, household preferences and daily routines are discussed before every arrangement, so families know what to expect.</p>
+      </div>
+      <a class="button button-dark" href="{{ '/questions/' | relative_url }}">Questions families ask <span aria-hidden="true">↗</span></a>
+    </div>
+  </div>
+</section>

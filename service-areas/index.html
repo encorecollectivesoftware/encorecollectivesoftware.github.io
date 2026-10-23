@@ -1,0 +1,7 @@
+---
+layout: default
+title: Calgary Service Areas
+slug: areas
+---
+<section class="page-hero page-hero-light"><div class="container page-head reveal"><p class="eyebrow">ONE STANDARD · EVERY QUADRANT</p><h1>All of Calgary.<br><em>Every kind of household.</em></h1><p>Our service model is designed for families across Calgary—from the inner city to the newest communities in the north, south, east and west.</p></div></section>
+<section class="section"><div class="container"><div class="section-heading reveal"><p class="eyebrow">NEIGHBOURHOOD COVERAGE</p><h2>Calgary-wide,<br><em>intentionally local.</em></h2><p>Communities are grouped by quadrant and neighbourhood type to help families explore the coverage model.</p></div><div class="area-grid">{% for area in site.data.areas %}<div class="area-card reveal"><span class="area-num">0{{ forloop.index }}</span><h2>{{ area.group }}</h2><p class="area-names">{{ area.names }}</p><p class="area-note">{{ area.note }}</p></div>{% endfor %}</div><div class="area-disclaimer"><strong>Coverage note.</strong> Calgary neighbourhoods are shown separately from nearby communities. Heritage Pointe, Artesia, De Winton and other Greater Calgary locations listed below fall outside Calgary city limits.</div></div></section>
