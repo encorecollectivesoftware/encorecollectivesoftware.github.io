@@ -79,13 +79,15 @@ For DNS details, refer to [GitHub's custom-domain documentation](https://docs.gi
 
 The public contact identity is configured as `concierge@encorenannycollective.com`. The email mailbox and any forwarding rules are managed separately from this repository.
 
-To enable Formspree, create a form within your own Formspree account, verify the recipient address, then paste the **form ID only** into `_config.yml`:
+The private enquiry form is configured to send through Formspree. Its public form ID is set in `_config.yml`:
 
 ```yaml
-formspree_form_id: "YOUR_FORM_ID"
+formspree_form_id: "xqppakpj"
 ```
 
-When the ID is blank, the site prepares a consultation brief locally instead of sending a form. A successful form submission is an enquiry acknowledgement, **not** a reservation or confirmation of availability. Do not collect sensitive information about children through the initial enquiry form.
+The corresponding endpoint is `https://formspree.io/f/xqppakpj`. The form owner must verify its notification recipient and confirm delivery with a test submission. To switch forms, replace the ID in `_config.yml`; to temporarily switch to a browser-only consultation brief, set `formspree_form_id: ""`. Restart Jekyll after any configuration change, then redeploy.
+
+Once the custom domain is working over HTTPS, consider Formspree's permitted-domain setting for `encorenannycollective.com` and enable its spam protection. A successful form submission is an enquiry acknowledgement, **not** a reservation or confirmation of availability. Do not collect sensitive information about children through the initial enquiry form.
 
 ## Website analytics
 
