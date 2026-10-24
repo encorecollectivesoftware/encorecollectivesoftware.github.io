@@ -33,7 +33,7 @@ exclude:
 # Private enquiry. Create a Formspree form with a verified recipient in your own account.
 # Paste ONLY the short form ID, not the full https://formspree.io/f/... URL.
 # Blank => local-only care brief; nonblank => real Formspree submission.
-formspree_form_id: ""
+formspree_form_id: "xqppakpj"
 concierge_email: "concierge@encorenannycollective.com"
 
 # Google Analytics 4 — optional analytics, opt-in only, production builds only.
