@@ -261,3 +261,11 @@
 .analytics-footer-row{display:flex;justify-content:flex-end;padding-bottom:20px}
 .analytics-manage{font-size:11px;cursor:pointer;color:#d5dcd0;background:none;border:0;padding:5px 0;text-decoration:underline;text-underline-offset:3px}
 @media(max-width:700px){.analytics-choice{left:10px;right:10px;bottom:10px;padding:17px}.analytics-choice-content{display:block}.analytics-choice-actions{margin-top:15px}.analytics-choice-actions button{flex:1}.analytics-footer-row{justify-content:flex-start}}
+
+/* V15 · intake feedback and accessible confirmation states */
+.enquiry-form-status{min-height:0;margin:10px 0 0;color:#8e413a;font-size:12px;line-height:1.6}
+.enquiry-form-status:empty{display:none}
+.enquiry-copy-feedback{font-size:12px;color:#557066;margin:8px 0 0}
+.enquiry-copy-feedback:empty{display:none}
+.enquiry-result #enquiry-feedback{line-height:1.75}
+@media(max-width:480px){.enquiry-submit{width:100%;text-align:center;justify-content:center}.enquiry-result .button{max-width:100%;white-space:normal}}

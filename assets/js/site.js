@@ -95,6 +95,8 @@
     const enabled=String(enquiryForm.dataset.formspreeEnabled).toLowerCase()==='true';
     const submit=enquiryForm.querySelector('button[type="submit"]');
     const feedback=document.getElementById('enquiry-feedback');
+    const formStatus=document.getElementById('enquiry-form-status');
+    const copyFeedback=document.getElementById('enquiry-copy-feedback');
     const result=document.getElementById('enquiry-result');
     enquiryForm.addEventListener('submit',async e=>{
       e.preventDefault();
@@ -102,16 +104,21 @@
       const get=id=>document.getElementById(id).value;
       const priorities=Array.from(enquiryForm.querySelectorAll('.enquiry-priorities input:checked')).map(e=>e.value);
       const body=[`Service: ${get('enquiry-service')}`,`Children: ${get('enquiry-children')}`,`Area: ${get('enquiry-area')}`,`Timing: ${get('enquiry-when')}`,`Coverage: ${get('enquiry-coverage')}`,`Priorities: ${priorities.join(', ')||'To be discussed'}`];
-      consultationBrief='ENCORE — PRIVATE CONSULTATION BRIEF\n'+body.join('\n');
+      consultationBrief='ENCORE — PRIVATE ENQUIRY SUMMARY\n'+body.join('\n');
+      formStatus.textContent='';
+      copyFeedback.textContent='';
+      result.hidden=true;
       if(enabled){
         const endpoint=enquiryForm.action;
         if(!/^https:\/\/formspree\.io\/f\/[a-z0-9]+$/i.test(endpoint)){
-          feedback.textContent='The enquiry connection is not configured. Please try again later.';
-          result.hidden=false;return;
+          formStatus.textContent='The enquiry connection is unavailable. Please try again later.';
+          return;
         }
         submit.disabled=true;
         submit.setAttribute('aria-busy','true');
-        feedback.textContent='Sending your enquiry…';
+        const originalLabel=submit.innerHTML;
+        submit.textContent='Sending enquiry…';
+        formStatus.textContent='Sending your enquiry…';
         try{
           const response=await fetch(endpoint,{method:'POST',body:new FormData(enquiryForm),headers:{'Accept':'application/json'}});
           if(!response.ok){
@@ -120,15 +127,20 @@
             throw new Error(detail||'The message could not be sent.');
           }
           document.getElementById('enquiry-summary').textContent=body.join(' · ')+'.';
-          feedback.textContent='Your enquiry has been sent. No care arrangement or availability is confirmed.';
+          feedback.textContent='Your enquiry has been received. Our private client office will review your preferences. No care arrangement or availability is confirmed.';
+          formStatus.textContent='';
           track('generate_lead',{method:'formspree'});
           result.hidden=false;
           enquiryForm.reset();
           result.scrollIntoView({behavior:reduced?'instant':'smooth',block:'nearest'});
         }catch(err){
-          feedback.textContent='We could not send your enquiry. Please retry. '+(err.message||'');
-          result.hidden=false;
-        }finally{submit.disabled=false;submit.removeAttribute('aria-busy')}
+          formStatus.textContent='Your enquiry was not sent. Please try again or contact the private client office by email.';
+          result.hidden=true;
+        }finally{
+          submit.disabled=false;
+          submit.removeAttribute('aria-busy');
+          submit.innerHTML=originalLabel;
+        }
       }else{
         consultationBrief+='\nPrepared for review only; no enquiry has been sent.';
         document.getElementById('enquiry-summary').textContent=body.join(' · ')+'.';
@@ -142,8 +154,8 @@
       try{
         if(navigator.clipboard&&window.isSecureContext){await navigator.clipboard.writeText(consultationBrief)}
         else{const box=document.createElement('textarea');box.value=consultationBrief;box.style.position='fixed';box.style.opacity='0';document.body.appendChild(box);box.select();const ok=document.execCommand('copy');box.remove();if(!ok)throw Error('copy unavailable')}
-        feedback.textContent='Consultation brief copied.';
-      }catch{feedback.textContent='The browser could not copy the brief. You can select the details above.'}
+        copyFeedback.textContent='Enquiry summary copied.';
+      }catch{copyFeedback.textContent='Copy is unavailable. You can select the summary above.'}
     });
   }
 })();

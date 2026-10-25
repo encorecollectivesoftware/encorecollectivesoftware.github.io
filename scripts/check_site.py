@@ -32,3 +32,13 @@ for html in [root/'index.html',root/'404.html',*root.glob('*/index.html')]:
     head=text.split('---\n',2)[1]
     assert isinstance(yaml.safe_load(head),dict),html
 print('Front matter YAML check passed for all pages.')
+
+# Release-candidate metadata and integration checks.
+layout=(root/'_layouts/default.html').read_text()
+assert 'og:image' in layout and 'twitter:card' in layout and 'canonical' in layout
+assert (root/'assets/images/encore-social-preview.jpg').exists()
+assert (root/'assets/images/encore-social-preview.jpg').stat().st_size < 500_000
+assert 'enquiry-form-status' in (root/'enquire/index.html').read_text()
+assert 'enquiry-copy-feedback' in (root/'enquire/index.html').read_text()
+assert 'diaper_counter_interval_seconds: 600' in (root/'_config.yml').read_text()
+print('Release-candidate checks: social card, consent configuration, enquiry statuses and counter settings.')

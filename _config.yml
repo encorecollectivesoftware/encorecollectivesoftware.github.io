@@ -44,4 +44,4 @@ analytics_enabled: true
 # without server-side state because browsers use the same UTC reference.
 diaper_counter_base: 128640
 diaper_counter_reference_utc: "2026-10-23T00:00:00Z"
-diaper_counter_interval_seconds: 240  # 1 count every 4 minutes (~360/day)
+diaper_counter_interval_seconds: 600  # 1 count every 10 minutes (~144/day)

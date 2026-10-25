@@ -73,14 +73,16 @@ slug: enquire
         <div class="enquiry-consent"><label><input type="checkbox" name="consent" value="yes" required> I agree to send these general preferences and my contact information to the private client office for a response.</label></div>
         {% endif %}
         <button class="button button-dark enquiry-submit" type="submit">{% if formspree_active %}Send private enquiry{% else %}Prepare consultation brief{% endif %} <span aria-hidden="true">↗</span></button>
+        <p id="enquiry-form-status" class="enquiry-form-status" aria-live="polite" role="status"></p>
         <p class="enquiry-privacy">{% if formspree_active %}Your enquiry is sent using Formspree. Please do not include children's names, birth dates, medical details or home addresses. Submitting this form does not reserve or confirm care.{% else %}This prepares a brief on your device. No information is transmitted or stored, and no reservation is created.{% endif %}</p>
       </form>
       <div id="enquiry-result" class="enquiry-result" hidden aria-live="polite">
-        <span class="eyebrow">YOUR PRELIMINARY BRIEF</span>
-        <h3>Considered care, clearly defined.</h3>
+        <span class="eyebrow">ENQUIRY SUMMARY</span>
+        <h3>Thank you for your enquiry.</h3>
         <p id="enquiry-summary"></p>
-        <button id="enquiry-copy" class="button button-outline" type="button">Copy consultation brief ↗</button>
-        <p class="enquiry-privacy" id="enquiry-feedback" role="status">{% if formspree_active %}Enquiry status will appear here.{% else %}Prepared for your review. This is not a reservation or transmitted enquiry.{% endif %}</p>
+        <button id="enquiry-copy" class="button button-outline" type="button">Copy enquiry summary ↗</button>
+        <p id="enquiry-copy-feedback" class="enquiry-copy-feedback" role="status" aria-live="polite"></p>
+        <p class="enquiry-privacy" id="enquiry-feedback" role="status">{% if formspree_active %}Your enquiry has been received. Our private client office will review your preferences. No care arrangement has been confirmed.{% else %}Prepared for your review. This is not a reservation or transmitted enquiry.{% endif %}</p>
       </div>
     </div>
   </div>

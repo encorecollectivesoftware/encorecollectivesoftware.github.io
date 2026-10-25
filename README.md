@@ -95,6 +95,17 @@ The site supports GA4 using the Measurement ID in `_config.yml`. Tracking is ena
 
 Verify deployment in **Google Analytics → Reports → Realtime**, using an ordinary visit to the production website after allowing analytics.
 
+
+## Link previews and responsive QA
+
+The site includes a 1200 × 630 social-sharing image at `assets/images/encore-social-preview.jpg`, plus Open Graph and `summary_large_image` tags in `_layouts/default.html`. Link-preview crawlers are permitted in `robots.txt`; search indexing remains discouraged by the page-level robots directives and default `robots.txt` policy. Preview appearance may vary across messaging apps, which often cache previous versions of a link.
+
+The homepage’s animated counter uses a fixed UTC reference and advances once every ten minutes in the current configuration; no backend or browser storage is required. Edit the three `diaper_counter_*` settings in `_config.yml` if required.
+
+The private-enquiry form distinguishes an accepted Formspree submission from a failed one. An unsuccessful submission is shown beside the form and does not display a false confirmation. The **Copy enquiry summary** button is available only after a successful submission (or the offline local-brief mode).
+
+Run desktop and mobile smoke tests for the home page, specialist profiles, services, FAQs and enquiry form after changing the stylesheet or shared layout.
+
 ## Maintenance
 
 - Run `python3 scripts/check_site.py` for static source checks (requires PyYAML).
